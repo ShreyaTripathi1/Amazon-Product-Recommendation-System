@@ -38,18 +38,18 @@ Query Processing: The user's query is tokenized and stemmed in the same way as t
 Similarity Scoring: The system calculates the cosine similarity between the processed query and the stemmed tokens of each product in the dataset.
 Result Ranking: Products are ranked based on their similarity scores, and the top 10 most similar products are returned as recommendations.
 
-# Model Explanation
+## Model Explanation
 The recommendation system is based on cosine similarity rather than a traditional machine learning model. This approach leverages vectorized representations of text (TF-IDF) to measure and compare the similarity between the user's query and product descriptions.
 
-# Why Cosine Similarity?
+## Why Cosine Similarity?
 Cosine similarity is particularly effective for text-based recommendations because it considers the orientation (angle) between vectors rather than their magnitude. This makes it well-suited for comparing text documents of varying lengths.
 
-# Accuracy
+## Accuracy
 The accuracy of the recommendations depends on the quality of the product data and how well the query matches the available descriptions. While this system is not trained on labeled data like a supervised machine learning model, it can provide highly relevant results based on textual similarity.
 
-# Limitations
+## Limitations
 The system's effectiveness relies heavily on the textual content of the product data. If descriptions are sparse or uninformative, recommendations may be less accurate.
 It does not account for user preferences or historical data, which might limit personalization.
 
-# Usage
+## Usage
 To use the recommendation system, simply input a query related to the product you're looking for, and the system will return the top 10 products that most closely match your query based on text similarity.
