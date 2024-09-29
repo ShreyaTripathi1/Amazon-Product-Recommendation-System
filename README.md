@@ -26,17 +26,17 @@ amazon_product.csv
 
 ## How It Works
 ### 1. Data Preprocessing
-Null Values: First, we check for any null values in the dataset and remove them if necessary.
-Text Normalization: The text in the product titles and descriptions is converted to lowercase to ensure uniformity.
-Tokenization: The text is broken down into individual words or tokens.
-Stemming: We use the Snowball Stemmer to reduce words to their base or root form. This helps in simplifying the text and reducing dimensionality, making the analysis more effective.
+- Null Values: First, we check for any null values in the dataset and remove them if necessary.
+- Text Normalization: The text in the product titles and descriptions is converted to lowercase to ensure uniformity.
+- Tokenization: The text is broken down into individual words or tokens.
+- Stemming: We use the Snowball Stemmer to reduce words to their base or root form. This helps in simplifying the text and reducing dimensionality, making the analysis more effective.
 ### 2. Cosine Similarity
-TF-IDF Vectorization: The preprocessed text is transformed into numerical vectors using the TfidfVectorizer from the scikit-learn library. TF-IDF (Term Frequency-Inverse Document Frequency) is a statistical measure that evaluates how important a word is to a document relative to a collection of documents.
-Cosine Similarity Calculation: Cosine similarity is used to measure the similarity between the user query and each product's text. It calculates the cosine of the angle between two vectors (representing the text data), with a value close to 1 indicating high similarity.
+- TF-IDF Vectorization: The preprocessed text is transformed into numerical vectors using the TfidfVectorizer from the scikit-learn library. TF-IDF (Term Frequency-Inverse Document Frequency) is a statistical measure that evaluates how important a word is to a document relative to a collection of documents.
+- Cosine Similarity Calculation: Cosine similarity is used to measure the similarity between the user query and each product's text. It calculates the cosine of the angle between two vectors (representing the text data), with a value close to 1 indicating high similarity.
 ### 3. Recommendation Process
-Query Processing: The user's query is tokenized and stemmed in the same way as the product data.
-Similarity Scoring: The system calculates the cosine similarity between the processed query and the stemmed tokens of each product in the dataset.
-Result Ranking: Products are ranked based on their similarity scores, and the top 10 most similar products are returned as recommendations.
+- Query Processing: The user's query is tokenized and stemmed in the same way as the product data.
+- Similarity Scoring: The system calculates the cosine similarity between the processed query and the stemmed tokens of each product in the dataset.
+- Result Ranking: Products are ranked based on their similarity scores, and the top 10 most similar products are returned as recommendations.
 
 ## Model Explanation
 The recommendation system is based on cosine similarity rather than a traditional machine learning model. This approach leverages vectorized representations of text (TF-IDF) to measure and compare the similarity between the user's query and product descriptions.
